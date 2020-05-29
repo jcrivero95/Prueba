@@ -18,6 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => ['jwt.verify']], function() {
+    
+       
+});
+
 Route::group(['middleware' => 'cors'], function(){
 
 Route::get('/ambito_impuestos', 'AmbitoImpuestoController@index')->name('ambito.all');
@@ -36,8 +41,6 @@ Route::get('/usuarios', 'UsuarioController@index')->name('usuario.all');
 Route::post('/usuarios', 'UsuarioController@store')->name('usuario.store');
 Route::post('/login', 'UsuarioController@authenticate')->name('usuario.authenticate');
 Route::get('profile', 'UsuarioController@getAuthenticatedUser');
-
-
 
 
 });
