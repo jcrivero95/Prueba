@@ -27,6 +27,6 @@ class CreateAmbitoImpuestosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ambito_impuestos');
+        Schema::dropIfExists('ambitos_impuestos');
     }
 }

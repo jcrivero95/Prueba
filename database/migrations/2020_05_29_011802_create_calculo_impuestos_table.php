@@ -27,6 +27,6 @@ class CreateCalculoImpuestosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calculo_impuestos');
+        Schema::dropIfExists('calculos_impuestos');
     }
 }
